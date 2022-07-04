@@ -14,7 +14,25 @@
 
 
 
-    <textarea name="editor" id="editor"></textarea>
+    <form action="#" method="POST">
+
+        <!-- text form field -->
+        <p><textarea name="editor" id="editor"><?php echo !empty($_POST['editor'])?$_POST['editor']:''; ?></textarea></p>
+
+        <!-- Submit button -->
+        <button type="submit" name="submit">Submit</button>
+    </form>
+
+
+
+
+    <!-- Display submitted contents -->
+    <?php if(!empty($_POST['editor'])) { ?>
+        <div class="output">
+            <h1>Submitted content:</h1>
+            <?php echo $_POST['editor']; ?>
+        </div>
+    <?php } ?>
 
 
 
